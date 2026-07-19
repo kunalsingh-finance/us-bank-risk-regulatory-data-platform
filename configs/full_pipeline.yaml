@@ -1,0 +1,17 @@
+{
+  "version": "full-logical-rebuild-v1",
+  "execution_guard": "BANK_RISK_FULL_REBUILD_CONFIRM=YES",
+  "source_version_dependency": "External FDIC downloads may change after the release candidate date; logical reproducibility does not guarantee byte-identical future downloads.",
+  "locked_test_policy": "Run only in a fresh independent rebuild workspace after validation selection is frozen; never rerun against the governed Phase 5 evidence in place.",
+  "stages": [
+    {"name": "historical_extraction", "command": ["python", "scripts/run_full_historical_extraction.py"]},
+    {"name": "duckdb_model", "command": ["python", "scripts/build_database.py", "--config", "configs/database_build.yaml"]},
+    {"name": "risk_features", "command": ["python", "scripts/build_risk_features.py", "--risk-config", "configs/risk_features.yaml", "--peer-config", "configs/peer_groups.yaml", "--quality-config", "configs/feature_quality_rules.yaml"]},
+    {"name": "outcome_labels", "command": ["python", "scripts/build_outcome_labels.py", "--label-config", "configs/outcome_labels.yaml", "--distress-config", "configs/distress_labels.yaml"]},
+    {"name": "model_dataset", "command": ["python", "scripts/build_model_datasets.py"]},
+    {"name": "training_validation", "command": ["python", "scripts/run_training_cv.py"]},
+    {"name": "validation_evaluation", "command": ["python", "scripts/evaluate_validation.py"]},
+    {"name": "controlled_locked_test", "command": ["python", "scripts/run_locked_test.py"], "manual_governance_gate": true},
+    {"name": "dashboard_tables", "command": ["python", "scripts/build_dashboard_data.py"]}
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "active_institution_records": false,
+  "bank_count": 100,
+  "build_run_id": "public-demo-v1-20260719",
+  "configuration_hash": "e11e6cd5f9f992cfae3ea852eee984bb24e84ec37a0ddd7ab9154987cb833d39",
+  "data_policy": "Institution-level records are synthetic. The validation table contains frozen aggregate research evidence only.",
+  "deterministic_build_timestamp": "2026-07-19T00:00:00Z",
+  "files": [
+    {
+      "bytes": 18180,
+      "path": "dashboard_demo_case_studies.parquet",
+      "rows": 4,
+      "sha256": "018adbc574b97b1eb8fa7c78801e29879a8d0e2c62bdbead67db19d388871285"
+    },
+    {
+      "bytes": 69171,
+      "path": "dashboard_demo_drivers.parquet",
+      "rows": 2400,
+      "sha256": "7d96bcb09d591dcd2cd8d14978b70aaae82c9d72629e3e8432bef672c5fd3010"
+    },
+    {
+      "bytes": 174663,
+      "path": "dashboard_demo_history.parquet",
+      "rows": 800,
+      "sha256": "ed352dd84c68709ef00a4a5858d55e3ea30d470c6d20228de94deb6a813cf2b6"
+    },
+    {
+      "bytes": 8482,
+      "path": "dashboard_demo_metadata.parquet",
+      "rows": 16,
+      "sha256": "717a201e5ee7c493d0d9a1b412bdd6e6afa57f3037f506aedad6c54e6ea1b1e0"
+    },
+    {
+      "bytes": 166722,
+      "path": "dashboard_demo_peer_comparisons.parquet",
+      "rows": 4800,
+      "sha256": "875b6989b1a597b716bbf89ba302155bdc23ef0e5ccc9d34d936987e25c5fb60"
+    },
+    {
+      "bytes": 18948,
+      "path": "dashboard_demo_quality.parquet",
+      "rows": 800,
+      "sha256": "afba3acc1523101b56fc6938ebeb398c4dcabf9f3d55eea668d541b10f8d6c82"
+    },
+    {
+      "bytes": 57027,
+      "path": "dashboard_demo_scores.parquet",
+      "rows": 800,
+      "sha256": "9aacaa28ab91475fa1aafe5de5465beda2520bfe50abc72b2c07a72e13f908ec"
+    },
+    {
+      "bytes": 13502,
+      "path": "dashboard_demo_validation.parquet",
+      "rows": 180,
+      "sha256": "940f07d4943bd07e04ae11e43d0644f56c1f6210b6c2a3a451c0de39b0a02486"
+    },
+    {
+      "bytes": 29818,
+      "path": "dashboard_demo_watchlist.parquet",
+      "rows": 5,
+      "sha256": "58a3701e60cb5021439126b36088c7429d12dadea7b30223a8c92576130f97b6"
+    },
+    {
+      "bytes": 22359,
+      "path": "synthetic_bank_quarter_sample.parquet",
+      "rows": 25,
+      "sha256": "a1fff0923fa6be4195a4d666307fa27961c4e705dd36b7e34bc4df4145b8a0f3"
+    }
+  ],
+  "model_binary": false,
+  "quarter_count": 8,
+  "raw_fdic_records": false,
+  "version": "public-demo-data-v1"
+}

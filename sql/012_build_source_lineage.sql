@@ -1,0 +1,7 @@
+-- Table-level lineage complements row-level lineage retained in every core table.
+INSERT INTO audit.source_lineage VALUES
+('core.institutions', 'institutions', '{{institution_source_path}}', '{{institution_source_hash}}', '{{build_run_id}}', '{{configuration_hash}}', '008_build_institution_dimension.sql', 'Direct typed projection of current institution reference; no historical forward fill'),
+('core.bank_quarter_financials', 'financials', '{{financial_source_path}}', '{{financial_source_hash}}', '{{build_run_id}}', '{{configuration_hash}}', '009_build_bank_quarter_fact.sql', 'Direct typed parse of the approved 40-field Core-v1 panel plus existing ingestion lineage'),
+('core.institution_history_events', 'history_events', '{{history_source_path}}', '{{history_source_hash}}', '{{build_run_id}}', '{{configuration_hash}}', '010_build_history_events.sql', 'Identifier-role standardization and source-code event taxonomy'),
+('core.bank_failures_reference', 'failures', '{{failure_source_path}}', '{{failure_source_hash}}', '{{build_run_id}}', '{{configuration_hash}}', '011_build_failure_reference.sql', 'Direct typed failure reference; no predictive labels'),
+('core.bank_exits_reference', 'history_events+failures', '{{history_source_path}} | {{failure_source_path}}', '{{history_source_hash}} | {{failure_source_hash}}', '{{build_run_id}}', '{{configuration_hash}}', '011_build_failure_reference.sql', 'Descriptive union of official failures and institution-level structural exits');

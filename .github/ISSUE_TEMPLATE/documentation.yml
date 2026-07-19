@@ -1,0 +1,19 @@
+name: Documentation issue
+description: Report an unclear, incorrect, or unsupported statement.
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: textarea
+    id: location
+    attributes:
+      label: Location and issue
+      description: Identify the page/section and explain the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Proposed evidence or wording
+      description: Include a public source when the change affects a financial definition or claim.
+    validations:
+      required: true

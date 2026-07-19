@@ -1,0 +1,24 @@
+{
+  "version": "phase1-anchor-v1",
+  "request_date": "2026-07-16",
+  "api_endpoint": "/banks/financials",
+  "pagination_method": "deterministic CERT ascending with limit and offset",
+  "fields_reference": "configs/phase1_candidate_financial_fields.yaml",
+  "fields_requested": [
+    "CERT", "RSSDID", "NAMEFULL", "REPDTE", "STALP", "BKCLASS", "REGAGNT", "ACTIVE", "CB", "ASSET",
+    "EQ", "EQTOT", "EQV", "RBC1AAJ", "IDT1CER", "IDT1RWAJR", "RBCRWAJ",
+    "LNLSGR", "LNLSNET", "P3ASSET", "P9ASSET", "NAASSET", "NTLNLS", "ORE",
+    "NETINC", "INTINC", "EINTEXP", "NONII", "NONIX", "PTAXNETINC", "ROA", "NIMY", "EEFFR",
+    "CHBAL", "SC", "DEP", "DEPDOM", "DEPUNINS", "DEPCSBQ", "COREDEP", "FREPO", "OTHBFHLB", "INTEXPY",
+    "LNRECONS", "LNREMULT", "LNRERES", "LNCI", "LNCON", "LNCRCD", "LNAG"
+  ],
+  "anchors": [
+    {"quarter": "2001_Q1", "report_date": "20010331", "reason": "Earliest target-period probe", "expected_purpose": "Legacy Call Report/TFR field availability"},
+    {"quarter": "2008_Q4", "report_date": "20081231", "reason": "Global financial crisis stress period", "expected_purpose": "Pre-Basel III and distressed-bank coverage"},
+    {"quarter": "2012_Q4", "report_date": "20121231", "reason": "Post-crisis and post-OTS transition", "expected_purpose": "Regulatory-transition continuity"},
+    {"quarter": "2020_Q2", "report_date": "20200630", "reason": "Pandemic shock and CBLR adoption", "expected_purpose": "CBLR and extraordinary-policy regime"},
+    {"quarter": "2023_Q1", "report_date": "20230331", "reason": "Recent banking-stress period", "expected_purpose": "Modern reporting and uninsured-deposit coverage"},
+    {"quarter": "2026_Q1", "report_date": "20260331", "reason": "Latest consistently completed quarter with supplied manual sample", "expected_purpose": "Manual/API reconciliation and current schema"}
+  ]
+}
+

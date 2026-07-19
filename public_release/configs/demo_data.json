@@ -1,0 +1,9 @@
+{
+  "version": "public-demo-data-v1",
+  "bank_count": 100,
+  "quarters": ["2023_Q1", "2023_Q2", "2023_Q3", "2023_Q4", "2024_Q1", "2024_Q2", "2024_Q3", "2024_Q4"],
+  "identifier_namespace": {"cert_start": 900001, "cert_end": 900100, "name_pattern": "Synthetic Bank NNN", "state": "DEMO"},
+  "institution_record_class": "deterministic synthetic",
+  "validation_record_class": "frozen aggregate historical research evidence",
+  "model_interpretation": "same-quarter relative ranking only"
+}

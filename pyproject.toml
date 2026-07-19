@@ -1,0 +1,31 @@
+[project]
+name = "bank-risk-platform"
+version = "1.0.0rc1"
+requires-python = ">=3.11"
+dependencies = [
+  "duckdb==1.5.4",
+  "pyarrow==23.0.1",
+  "pandas==3.0.3",
+  "scikit-learn==1.9.0",
+  "scipy==1.17.1",
+  "streamlit==1.59.2",
+  "plotly==6.9.0",
+  "PyYAML==6.0.3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==9.0.2",
+  "ruff==0.14.14",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 160
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

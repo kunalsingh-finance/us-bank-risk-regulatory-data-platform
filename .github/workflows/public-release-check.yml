@@ -1,0 +1,36 @@
+name: Public release check
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: python -m pip install -r requirements-dev.txt
+      - run: python scripts/run_public_quality_gate.py --root . --output public_release/PUBLIC_RELEASE_QUALITY_GATE.json
+      - name: Demo startup smoke test
+        shell: bash
+        run: |
+          BANK_RISK_DEMO_PORT=8511 python scripts/run_demo.py > streamlit.log 2>&1 &
+          pid=$!
+          for attempt in {1..30}; do
+            if curl --fail --silent http://localhost:8511/_stcore/health; then
+              kill "$pid"
+              wait "$pid" || true
+              exit 0
+            fi
+            sleep 1
+          done
+          cat streamlit.log
+          kill "$pid" || true
+          exit 1

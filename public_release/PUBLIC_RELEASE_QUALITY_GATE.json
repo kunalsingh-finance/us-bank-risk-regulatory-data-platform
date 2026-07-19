@@ -1,0 +1,71 @@
+{
+  "candidate_files_scanned": 324,
+  "checks": [
+    {
+      "check_id": "demo_package",
+      "detail": "800 synthetic score rows and 11 frozen metrics validated",
+      "status": "PASS"
+    },
+    {
+      "check_id": "secret_scan",
+      "detail": "findings=0",
+      "status": "PASS"
+    },
+    {
+      "check_id": "local_path_scan",
+      "detail": "findings=0",
+      "status": "PASS"
+    },
+    {
+      "check_id": "claims_audit",
+      "detail": "unresolved=0, reviewed_contexts=654",
+      "status": "PASS"
+    },
+    {
+      "check_id": "binary_policy",
+      "detail": "violations=0",
+      "status": "PASS"
+    },
+    {
+      "check_id": "clean_candidate_raw_exclusion",
+      "detail": "clean_candidate=True, raw_present=False",
+      "status": "PASS"
+    },
+    {
+      "check_id": "clean_candidate_model_binary_exclusion",
+      "detail": "clean_candidate=True, model_directory_present=False",
+      "status": "PASS"
+    },
+    {
+      "check_id": "responsible_use",
+      "detail": "required policy file",
+      "status": "PASS"
+    },
+    {
+      "check_id": "license_boundary",
+      "detail": "code and third-party boundaries",
+      "status": "PASS"
+    }
+  ],
+  "demo_validation": {
+    "frozen_metrics": 11,
+    "manifest_version": "public-demo-data-v1",
+    "score_rows": 800,
+    "status": "PASS",
+    "table_counts": {
+      "dashboard_demo_case_studies.parquet": 4,
+      "dashboard_demo_drivers.parquet": 2400,
+      "dashboard_demo_history.parquet": 800,
+      "dashboard_demo_metadata.parquet": 16,
+      "dashboard_demo_peer_comparisons.parquet": 4800,
+      "dashboard_demo_quality.parquet": 800,
+      "dashboard_demo_scores.parquet": 800,
+      "dashboard_demo_validation.parquet": 180,
+      "dashboard_demo_watchlist.parquet": 5,
+      "synthetic_bank_quarter_sample.parquet": 25
+    }
+  },
+  "failed_checks": [],
+  "status": "PASS",
+  "version": "phase7-public-quality-gate-v1"
+}

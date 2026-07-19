@@ -1,0 +1,16 @@
+{
+  "base_url": "https://api.fdic.gov/banks",
+  "endpoint": "financials",
+  "page_size": 1000,
+  "timeout_seconds": 45,
+  "max_attempts": 4,
+  "backoff_base_seconds": 1.0,
+  "user_agent": "bank-risk-platform-phase1/0.1 (public-data research; no credentials)",
+  "population_filter": "ACTIVE:1 AND !(BKCLASS:NC)",
+  "required_fields": ["CERT", "REPDTE"],
+  "allowed_unexpected_fields": ["ID"],
+  "sort_by": "CERT",
+  "sort_order": "ASC",
+  "format": "json"
+}
+

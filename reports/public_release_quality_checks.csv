@@ -1,0 +1,10 @@
+check_id,status,detail
+demo_package,PASS,800 synthetic score rows and 11 frozen metrics validated
+secret_scan,PASS,findings=0
+local_path_scan,PASS,findings=0
+claims_audit,PASS,"unresolved=0, reviewed_contexts=654"
+binary_policy,PASS,violations=0
+clean_candidate_raw_exclusion,PASS,"clean_candidate=True, raw_present=False"
+clean_candidate_model_binary_exclusion,PASS,"clean_candidate=True, model_directory_present=False"
+responsible_use,PASS,required policy file
+license_boundary,PASS,code and third-party boundaries

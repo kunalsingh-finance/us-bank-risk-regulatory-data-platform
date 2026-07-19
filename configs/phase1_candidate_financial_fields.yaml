@@ -1,0 +1,61 @@
+version: phase0-candidate-v1
+status: provisional
+units_note: Monetary financial values are generally thousands of U.S. dollars.
+fields:
+  identity_peer_scale:
+    - CERT
+    - RSSDID
+    - NAMEFULL
+    - REPDTE
+    - STALP
+    - BKCLASS
+    - REGAGNT
+    - ACTIVE
+    - CB
+    - ASSET
+  capital:
+    - EQ
+    - EQTOT
+    - EQV
+    - RBC1AAJ
+    - IDT1CER
+    - IDT1RWAJR
+    - RBCRWAJ
+  asset_quality:
+    - LNLSGR
+    - LNLSNET
+    - P3ASSET
+    - P9ASSET
+    - NAASSET
+    - NTLNLS
+    - ORE
+  earnings:
+    - NETINC
+    - INTINC
+    - EINTEXP
+    - NONII
+    - NONIX
+    - PTAXNETINC
+    - ROA
+    - NIMY
+    - EEFFR
+  funding_liquidity:
+    - CHBAL
+    - SC
+    - DEP
+    - DEPDOM
+    - DEPUNINS
+    - DEPCSBQ
+    - COREDEP
+    - FREPO
+    - OTHBFHLB
+    - INTEXPY
+  concentration:
+    - LNRECONS
+    - LNREMULT
+    - LNRERES
+    - LNCI
+    - LNCON
+    - LNCRCD
+    - LNAG
+
