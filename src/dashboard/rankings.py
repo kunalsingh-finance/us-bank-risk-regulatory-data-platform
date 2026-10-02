@@ -8,6 +8,30 @@ import numpy as np
 import pandas as pd
 
 
+def current_review_population(scores: pd.DataFrame, drivers: pd.DataFrame) -> pd.DataFrame:
+    """Keep the whole latest-quarter population before applying a review budget."""
+    population = scores.copy()
+    population["reporting_date"] = pd.to_datetime(population["reporting_date"])
+    population = population.loc[population["reporting_date"].eq(population["reporting_date"].max())].copy()
+    explanations = drivers.copy()
+    explanations["reporting_date"] = pd.to_datetime(explanations["reporting_date"])
+    explanations = explanations.loc[
+        explanations["reporting_date"].eq(population["reporting_date"].max())
+        & explanations["driver_rank"].isin([1, 2, 3])
+    ]
+    keys = ["cert", "reporting_date"]
+    if explanations.empty:
+        for rank in (1, 2, 3):
+            population[f"top_driver_{rank}"] = "Unavailable"
+    else:
+        pivoted = explanations.pivot(index=keys, columns="driver_rank", values="feature_name")
+        pivoted = pivoted.reindex(columns=[1, 2, 3]).rename(columns=lambda rank: f"top_driver_{rank}")
+        population = population.merge(pivoted.reset_index(), on=keys, how="left", validate="one_to_one")
+        for rank in (1, 2, 3):
+            population[f"top_driver_{rank}"] = population[f"top_driver_{rank}"].fillna("Unavailable")
+    return population.sort_values(["same_quarter_rank", "cert"]).reset_index(drop=True)
+
+
 def risk_tier(percentile: float) -> str:
     if percentile < 0.0 or percentile > 100.0:
         raise ValueError(f"Percentile outside 0-100: {percentile}")

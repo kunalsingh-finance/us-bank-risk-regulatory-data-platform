@@ -61,6 +61,8 @@ The governed research build contains 698,804 unique bank-quarter rows, 11,073 hi
 
 The Streamlit app includes Executive Overview, Current Watchlist, Bank Detail, Peer Comparison, Model Validation, Case Studies, Data Quality and Lineage, and Methodology and Limitations. In public demo mode, all institution-level records and cases are deterministic synthetic examples; only validation summaries are frozen aggregate research evidence.
 
+The watchlist's 1%, 5% and 10% review budgets use the complete latest-quarter population and same-quarter driver explanations. In the included 100-institution demo, those settings show 1, 5 and 10 institutions before optional filters. The saved `current_watchlist` export remains the frozen top-5% snapshot; it does not limit the interactive page's broader budget.
+
 ## Quick-start demonstration
 
 Python 3.11 or newer is required.
