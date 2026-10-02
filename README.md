@@ -95,6 +95,8 @@ python scripts/run_full_pipeline.py --config configs/full_pipeline.yaml
 
 Execution requires the explicit `BANK_RISK_FULL_REBUILD_CONFIRM=YES` guard and should occur in a new workspace. External FDIC sources can change, so a future rebuild is logically reproducible but may not be byte-identical to the frozen 2026 evidence. See [the full rebuild guide](docs/FULL_REBUILD_GUIDE.md).
 
+Configured `python` and `python3` stages use the interpreter running the orchestrator, so invoking it through `.venv` retains the installed environment even when that environment is not activated in the shell.
+
 ## Tests and controls
 
 ```powershell
