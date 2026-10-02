@@ -14,6 +14,7 @@ from .charts import category_alerts, feature_history, lead_time_histogram, peer_
 from .config import load_dashboard_configs
 from .data_access import distinct_values, latest_reporting_date, parquet_columns, parquet_sql, query_parquet
 from .formatting import ASSET_BAND_LABELS, feature_label, percentile_label
+from .rankings import current_review_population
 
 
 ROOT: Path = Path(__file__).resolve().parents[2]
@@ -108,8 +109,11 @@ def render_executive() -> None:
 
 def render_watchlist() -> None:
     configure_page("Bank Risk | Current Watchlist")
-    persistent_header("Current Monitoring Watchlist", "Frozen top-5% same-quarter review population")
-    frame: pd.DataFrame = cached_table("current_watchlist")
+    persistent_header("Current Monitoring Watchlist", "Latest prepared quarter · selectable review budget")
+    latest = latest_reporting_date(dashboard_table_path("bank_scores"))
+    scores = cached_query("bank_scores", parquet_columns(dashboard_table_path("bank_scores")), "reporting_date=?", (latest,))
+    drivers = cached_query("driver_explanations", ("cert", "reporting_date", "driver_rank", "feature_name"), "reporting_date=?", (latest,))
+    frame: pd.DataFrame = current_review_population(scores, drivers)
     states: list[str] = sorted(frame["state"].dropna().unique().tolist())
     bands: list[str] = sorted(frame["asset_size_band"].dropna().unique().tolist())
     classes: list[str] = sorted(frame["bank_class"].dropna().unique().tolist())
@@ -124,8 +128,8 @@ def render_watchlist() -> None:
     for column, values in (("state", selected_states), ("asset_size_band", selected_bands), ("bank_class", selected_classes), ("risk_tier", selected_tiers)):
         if values:
             filtered = filtered.loc[filtered[column].isin(values)]
-    if top_filter == "Top 1%":
-        filtered = filtered.loc[filtered["top_1_percent_flag"]]
+    budget_flag = {"Top 1%": "top_1_percent_flag", "Top 5%": "top_5_percent_flag", "Top 10%": "top_10_percent_flag"}[top_filter]
+    filtered = filtered.loc[filtered[budget_flag]]
     display: pd.DataFrame = filtered[["bank_name", "cert", "state", "asset_size_band", "bank_class", "same_quarter_percentile", "same_quarter_rank", "risk_tier", "percentile_change_qoq", "percentile_change_yoy", "top_driver_1", "top_driver_2", "top_driver_3", "data_quality_warning", "prediction_split"]].copy()
     display = display.rename(columns={"bank_name": "Bank", "cert": "CERT", "same_quarter_percentile": "Percentile", "same_quarter_rank": "Rank"})
     st.dataframe(display, width="stretch", hide_index=True, column_config={"Percentile": st.column_config.NumberColumn(format="%.1f")})

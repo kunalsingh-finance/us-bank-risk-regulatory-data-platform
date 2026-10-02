@@ -6,6 +6,7 @@ import argparse
 import json
 import os
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT: Path = Path(__file__).resolve().parents[1]
@@ -38,6 +39,8 @@ def stage_commands(config: dict[str, object]) -> tuple[tuple[str, ...], ...]:
         command: tuple[str, ...] = tuple(str(value) for value in raw_stage["command"])
         if not command:
             raise ValueError(f"Pipeline stage command cannot be empty: stage={raw_stage}")
+        if command[0] in {"python", "python3"}:
+            command = (sys.executable, *command[1:])
         commands.append(command)
     return tuple(commands)
 

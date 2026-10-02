@@ -645,7 +645,7 @@ scripts/prepare_dashboard_configs.py,102,will_fail,RESOLVED_GOVERNANCE_CONTEXT,"
 scripts/prepare_dashboard_configs.py,103,will_fail,RESOLVED_GOVERNANCE_CONTEXT,"""ranking_interpretation"": ""An elevated ranking indicates stronger public-data risk indicators relative to other eligible institutions in the same reporting quarter. It does not mean that the institution will fail."","
 scripts/prepare_risk_feature_configs.py,64,official_camels,RESOLVED_GOVERNANCE_CONTEXT,"(""capital_deterioration_flag"", ""Capital"", ""capital trend evidence"", ""none"", ""1 when equity ratio falls materially"", ""flag"", ""Higher value = higher risk"", ""not applicable"", False, ""Derived"", False, [""1Q"", ""4Q""], ""Screening flag, not an offic"
 scripts/run_public_quality_gate.py,37,guaranteed,RESOLVED_GOVERNANCE_CONTEXT,"(""guaranteed"", re.compile(r""(?i)\bguaranteed\b"")),"
-src/dashboard/app_pages.py,336,guaranteed,RESOLVED_GOVERNANCE_CONTEXT,- The platform provides no regulatory or investment advice and makes no guaranteed institution-level prediction.
+src/dashboard/app_pages.py,340,guaranteed,RESOLVED_GOVERNANCE_CONTEXT,- The platform provides no regulatory or investment advice and makes no guaranteed institution-level prediction.
 src/dashboard/language.py,11,failure_probability,RESOLVED_GOVERNANCE_CONTEXT,"""probability of failure"", ""failure probability"", ""probability of default"", ""will fail"","
 src/dashboard/language.py,11,will_fail,RESOLVED_GOVERNANCE_CONTEXT,"""probability of failure"", ""failure probability"", ""probability of default"", ""will fail"","
 src/dashboard/language.py,12,likely_to_fail,RESOLVED_GOVERNANCE_CONTEXT,"""likely to fail"", ""official camels"", ""regulatory rating"", ""safe bank"", ""unsafe bank"","
