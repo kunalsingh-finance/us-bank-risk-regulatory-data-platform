@@ -2,7 +2,7 @@
 
 DuckDB creates one-row-per-bank-quarter modelling tables, assigns chronological splits, filters eligible statuses, masks test outcomes, and reconciles row counts. Python fits fold-specific pipelines and calculates rare-event metrics.
 
-Five ideas to understand for an interview:
+Five modelling controls:
 
 1. `WHERE label_status IN ('POSITIVE','NEGATIVE')` prevents censored rows from becoming false negatives.
 2. A date `CASE` expression assigns each observation to exactly one chronological split.
@@ -26,4 +26,4 @@ pipeline.fit(training_features, training_target)
 validation_probability = pipeline.predict_proba(validation_features)[:, 1]
 ```
 
-The candidate should explain why training-only preprocessing, chronological validation, test isolation, event-level capture, and calibration matter. This is practical risk-analytics SQL and Python, not a claim of advanced quantitative research.
+Training-only preprocessing, chronological validation, and test isolation protect the evaluation from leakage. Event-level capture complements row-level metrics, while calibration determines whether model outputs can be interpreted as probabilities.

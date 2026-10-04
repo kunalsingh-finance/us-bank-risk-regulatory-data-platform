@@ -16,7 +16,7 @@ Final verdict: **Approved with dashboard restrictions**.
 12. The app runs only from prepared presentation data.
 13. Build and representative page performance are acceptable on the tested Windows desktop.
 14. The language scan has zero unresolved findings.
-15. The dashboard is suitable for a controlled recruiter demonstration with the persistent disclaimer.
+15. The dashboard is suitable for a controlled dashboard demonstration with the persistent disclaimer.
 16. Raw FDIC downloads and API archives must remain excluded pending redistribution review.
 17. Serialized model and calibrator binaries should remain excluded from a public repository.
 18. Aggregate validation reports and small metadata tables may be candidates for publication after review.

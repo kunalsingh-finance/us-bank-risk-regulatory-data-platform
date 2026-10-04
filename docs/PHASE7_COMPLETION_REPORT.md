@@ -88,6 +88,6 @@ Updated `.gitignore`, `pyproject.toml`, `README.md`, `CHANGELOG.md`, and `src/da
 3. Do not present PR-AUC as precision, lead with the 289.3× ratio, or describe ranks as probabilities.
 4. Always disclose 17 locked-test failures, weak calibration, wide uncertainty, subgroup instability, and false alerts.
 5. Re-review current FDIC terms before any future source-data redistribution.
-6. Publication, deployment, and career claims still require separate manual approval.
+6. Publication and deployment still require separate manual approval.
 
-Phase 8 readiness: **Approved with restricted claims.**
+Release readiness: **Approved with restricted analytical claims.**

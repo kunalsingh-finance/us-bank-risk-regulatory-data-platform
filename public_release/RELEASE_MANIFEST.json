@@ -10,14 +10,14 @@
     "serialized selected model",
     "all model-development binaries"
   ],
-  "file_count_excluding_self_referential_manifests": 327,
+  "file_count_excluding_self_referential_manifests": 326,
   "included_code": true,
   "included_documentation": true,
   "included_samples": "deterministic synthetic institution records and frozen aggregate validation evidence",
   "public_quality_gate": "PASS",
   "publication_verdict": "RELEASE CANDIDATE ONLY \u2014 MANUAL PUBLICATION APPROVAL REQUIRED",
   "release_candidate_version": "1.0.0-rc1",
-  "release_inventory_sha256": "193e375385cdf0a7d87aee41951e9ebce193b8fcf26547eeeb56c4472b4fd01e",
+  "release_inventory_sha256": "6247d58d251bbdbd3ac996c76e9b6172225c98cbf4bd520ce24f1749a59545cf",
   "remaining_restrictions": [
     "do not publish development Git history",
     "do not interpret ranks as probabilities",
@@ -25,5 +25,5 @@
   ],
   "source_branch": "phase7-public-release",
   "source_commit": "8a0b3d436e728d29411f06b27b71ed20171c02db",
-  "total_bytes_excluding_self_referential_manifests": 3341959
+  "total_bytes_excluding_self_referential_manifests": 3333740
 }

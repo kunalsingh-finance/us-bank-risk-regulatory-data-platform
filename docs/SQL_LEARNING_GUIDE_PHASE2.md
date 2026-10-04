@@ -1,6 +1,6 @@
 # SQL Learning Guide — Phase 2
 
-This phase uses DuckDB as an embedded analytical database: it reads Parquet/CSV directly, runs standard SQL locally, and produces a single reproducible database file. The candidate should explain the design as controlled data modelling, not advanced database engineering.
+This phase uses DuckDB as an embedded analytical database: it reads Parquet/CSV directly, runs standard SQL locally, and produces a single reproducible database file. The design separates source-preserving staging, canonical analytical tables, and quality-control evidence.
 
 ## Core ideas
 
@@ -10,7 +10,7 @@ Staging tables preserve source columns and add parse status. They create an audi
 
 Window functions examine neighboring rows without collapsing them. Phase 2 avoids feature lags, but later phases may use `LAG()` for quarter-over-quarter movement only after ordering by bank and date. Exception queries select rule violations into a table rather than deleting them.
 
-## Five queries to understand personally
+## Five validation queries
 
 1. Prove the bank-quarter key is unique:
 
@@ -70,8 +70,8 @@ ORDER BY control_id;
 
 An exception is evidence to investigate, not a row to delete.
 
-## Interview explanation
+## Design summary
 
-“I used DuckDB because it can query Parquet and CSV directly with SQL and create a portable analytical database. I separated source-preserving staging tables from canonical core tables, used CERT plus quarter-end date as the fact key, retained unmatched records through left joins, and generated audit, lineage, reconciliation, and exception tables. Python only orchestrates the ordered, transactional SQL build.”
+DuckDB queries Parquet and CSV directly with SQL and creates a portable analytical database. Source-preserving staging tables are separate from canonical core tables. CERT plus quarter-end date forms the fact key, left joins retain unmatched records, and separate audit, lineage, reconciliation, and exception tables preserve control evidence. Python orchestrates the ordered, transactional SQL build.
 
-Be ready to explain why name is not a key, why current institution data cannot be forward-filled historically, why an assistance record is not a failure, and why 56 sequential RSSDID mappings are different from a concurrent identifier conflict.
+Institution names are not stable keys, and current institution data cannot be forward-filled historically. Assistance records remain distinct from failures. The 56 sequential RSSDID mappings represent changes over time rather than concurrent identifier conflicts.

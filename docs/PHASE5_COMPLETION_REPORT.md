@@ -2,7 +2,7 @@
 
 ## Status
 
-Phase 5 passes with the verdict **Approved as ranking model only**. Work stopped before dashboard, public-release, resume, LinkedIn, or interview packaging.
+Phase 5 passes with the verdict **Approved as ranking model only**. Work stopped before dashboard development and public-release preparation.
 
 | Item | Result |
 |---|---|

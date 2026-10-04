@@ -6,7 +6,7 @@ Four-quarter and eight-quarter boundaries use calendar intervals, not row counts
 
 Future distress features define an outcome in a separate table. They never become columns in the predictor table. This separation is the practical defense against label leakage.
 
-Five queries the candidate should understand:
+Five label and leakage-control queries:
 
 ```sql
 SELECT cert, reporting_date, next_failure_date
@@ -37,4 +37,4 @@ SELECT control_id, control_name, status
 FROM quality.label_leakage_checks;
 ```
 
-In an interview, explain that DuckDB executes the auditable interval, join, and reconciliation logic directly against Parquet-backed regulatory data while Python only orchestrates builds and validations.
+DuckDB executes the auditable interval, join, and reconciliation logic directly against Parquet-backed regulatory data. Python orchestrates the builds and validations.

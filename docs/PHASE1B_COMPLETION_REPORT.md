@@ -6,7 +6,7 @@ Phase 1B is complete.
 
 **Phase 2 readiness verdict: Approved for Phase 2 SQL data modelling.**
 
-No DuckDB analytical model, risk ratio, lag, label, macroeconomic merge, predictive model, dashboard, or career artifact was started.
+No DuckDB analytical model, risk ratio, lag, label, macroeconomic merge, predictive model, or dashboard was started.
 
 ## Version control baseline
 

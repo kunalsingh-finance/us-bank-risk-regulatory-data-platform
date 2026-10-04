@@ -4,7 +4,7 @@ Ratios use `CASE` so invalid denominators become null. `LAG(value, 1)` retrieves
 
 Peer percentiles partition by reporting date, final peer group, and feature. `PERCENT_RANK()` places a bank from 0 to 1 within that historical peer population. `CASE` reverses low-is-risky measures such as capital and ROA. Raw extremes remain unchanged, while quality tables explain why a value is missing or unusual.
 
-Five queries to understand:
+Five feature and control queries:
 
 ```sql
 -- 1. Protected accounting capital ratio
@@ -41,4 +41,4 @@ FROM quality.feature_exceptions
 GROUP BY quality_flag;
 ```
 
-Interview explanation: “I built ratios and trends in DuckDB SQL with explicit denominator guards, exact-date lags, backward-looking windows, and quarter-specific peer percentiles. I preserved raw extremes and stored quality evidence separately, so every null or warning is auditable.”
+The feature SQL applies explicit denominator guards, exact-date lags, backward-looking windows, and quarter-specific peer percentiles. Raw extremes remain preserved, and separately stored quality evidence makes nulls and warnings auditable.

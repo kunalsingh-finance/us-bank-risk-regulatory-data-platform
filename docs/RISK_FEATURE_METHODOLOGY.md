@@ -20,4 +20,4 @@ Thirteen requested features were excluded because Core-v1 intentionally omitted 
 
 Temporal calculations use exact one- and four-quarter prior dates. Eight-quarter windows use only the current and seven preceding rows, require eight valid observations, and never use centered windows. Current/prior average balances are used only when both observations are valid. Extreme values are preserved with flags; no winsorization, truncation, or imputation occurs.
 
-Screening flags use documented thresholds and remain separate from raw measures. They are recruiter-visible diagnostics, not composite scores. Failure and assistance tables are not joined into feature calculations.
+Screening flags use documented thresholds and remain separate from raw measures. They are dashboard diagnostics, not composite scores. Failure and assistance tables are not joined into feature calculations.

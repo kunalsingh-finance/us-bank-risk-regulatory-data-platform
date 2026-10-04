@@ -8,9 +8,9 @@ U.S. Bank Risk Early-Warning & Regulatory Data Platform
 
 Can public regulatory financial data identify early signs of deterioration in U.S. banks before FDIC failure or severe financial distress?
 
-## Positioning
+## Purpose and boundaries
 
-This is a recruiter-ready, public-data banking-risk and financial-data platform for early-career analyst roles. It demonstrates banking interpretation, SQL data modelling, controls, reproducibility, transparent rare-event modelling, and management reporting. It does not position the candidate as a regulator, senior quantitative researcher, or production software engineer.
+This public-data banking-risk and financial-data research platform combines banking interpretation, SQL data modelling, controls, reproducibility, transparent rare-event modelling, and management reporting. It is a research implementation, not a regulatory assessment or production supervisory system.
 
 The analytical framework must always be called a **public-data CAMELS-style risk indicator framework**. Actual CAMELS ratings are confidential and are not available here.
 
@@ -24,14 +24,14 @@ The analytical framework must always be called a **public-data CAMELS-style risk
 - Official public macroeconomic data after the bank panel passes quality gates.
 - Chronological rare-event modelling, calibration, threshold analysis, and explainable alerts.
 - Streamlit monitoring dashboard and reproducible reports.
-- Public-release safety and truthful career packaging after validation.
+- Public-release safety and evidence-based documentation after validation.
 
 ## Out of scope and prohibited claims
 
 - Official CAMELS ratings, regulatory approval, production supervision, investment advice, guaranteed failure prediction, or causal claims from model importance.
 - Random splits, shuffled validation, future leakage, full-sample preprocessing, merger-as-failure labels, or test-set tuning.
 - Accuracy as the primary rare-event metric.
-- Publishing credentials, local paths, restricted raw data, or unsupported career claims.
+- Publishing credentials, local paths, restricted raw data, or unsupported analytical claims.
 
 ## Analytical keys and grain
 

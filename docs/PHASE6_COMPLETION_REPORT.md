@@ -2,7 +2,7 @@
 
 ## Final verdict
 
-**Approved for controlled recruiter demonstration with persistent ranking-only restrictions.**
+**Approved for controlled dashboard demonstration with persistent ranking-only restrictions.**
 
 Phase 6 stops here. No Phase 5 model, feature, label, split, threshold, or prediction was changed. No macroeconomic ingestion, deployment, public publication, or Phase 7 packaging was performed.
 
